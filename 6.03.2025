@@ -1,0 +1,88 @@
+1)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace _6._03._2025
+{
+    class ex1
+    {
+        static void Main(string[] args)
+        {
+            int count = 0;
+            DateTime time1 = DateTime.Now;
+            Console.Write("хорошие числа: ");
+            for (int i = 0; i <= 1000000; i++)
+            {
+                if (i == 0 || i == 1)
+                {
+                    continue;
+                }
+                else
+                if (i % iSum(i) == 0)
+                {
+                    count++;
+                }
+            }
+            DateTime time2 = DateTime.Now;
+
+            Console.WriteLine(count);
+            Console.WriteLine(time2.Millisecond - time1.Millisecond);
+        }
+        public static int iSum(int i)
+        {
+            int lenght = i.ToString().Length;
+            int sum = 0;
+
+            for (int j = 0; j <= lenght; j++)
+            {
+                sum += i % 10;
+                i /= 10;
+
+            }
+            return sum;
+        }
+    }
+}
+------------------------------------------------------------------------------
+2)
+using System;
+
+namespace _6._03._2025
+{
+    class ex2
+    {
+        static void Main(string[] args)
+        {
+            int sum = 0;
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            Recursia(a, b);
+            RecursiaSum(a, b, sum);
+        }
+
+        public static void Recursia(int a, int b)
+        {
+            if (a <= b)
+            {
+                Console.WriteLine(a);
+                Recursia(a + 1, b);
+            }
+
+        }
+        public static void RecursiaSum(int a, int b, int sum)
+        {
+            if (a <= b & a > 0)
+            {
+                sum += a;
+                RecursiaSum(a + 1, b, sum);
+            }
+            else
+                Console.WriteLine(sum);
+
+        }
+    }
+}
