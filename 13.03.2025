@@ -1,0 +1,69 @@
+1)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _13._03._2025
+{
+    class ex1
+    {
+        static void Main(string[] args)
+        {
+            var dict = new Dictionary<string, string>();
+
+            dict.Add("Car", "Машина");
+            dict.Add("Home", "Дом");
+            dict.Add("House", "Дом");
+            dict.Add("Room", "Комната");
+            dict.Add("Roof", "Крыша");
+
+            Console.WriteLine("Введите слово:");
+            string word = Console.ReadLine();
+            string value;
+            dict.TryGetValue(word, out value);
+            Console.WriteLine(value);
+
+
+        }
+    }
+}
+--------------------------------------------------------
+2)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _13._03._2025
+{
+    class ex2
+    {
+        static void Main(string[] args)
+        {
+            List<int> list = new List<int>() { 1, 2, 3, 4, 5 }; //создание списка
+            foreach (int item in list)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine();
+
+            Console.WriteLine(list.IndexOf(2)); //поиск индекса числа
+
+            list.Add(1); //добавление числа в список
+                foreach (int item in list)
+            {
+                Console.Write(item);
+            }
+            Console.WriteLine();
+
+            list.Remove(3); //удаление числа из списка
+            foreach (int item in list)
+            {
+                Console.Write(item);
+            }
+        }
+    }
+}
